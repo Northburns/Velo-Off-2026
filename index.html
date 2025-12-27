@@ -1,0 +1,138 @@
+<!doctype html>
+<!--
+
+   _____ _______ ____  _____  _ 
+  / ____|__   __/ __ \|  __ \| |
+ | (___    | | | |  | | |__) | |
+  \___ \   | | | |  | |  ___/| |
+  ____) |  | | | |__| | |    |_|
+ |_____/   |_|  \____/|_|    (_)
+                                
+                                
+  This is a small gift. Don't ruin the suprise, please!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@4.1.0/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
+    <title>🤫</title>
+  </head>
+  <!--
+    https://picocss.com/docs/colors
+  -->
+  <body id="body"
+    style="--display-before: block; --display-after: none; --display-plus: none;"  
+  >
+    <main class="container" style="position: relative;">
+      <!-- BEFORE -->
+      <article id="demo" class="pico-background-azure-800" style="display: var(--display-before);">
+        <hgroup>
+          <h2>Ei ihan vielä!</h2>
+          <p>Voit öögailla tätä sivua vaikka kuinka, mutta vielä pitää odottaa.</p>
+        </hgroup>
+
+      
+      </article>
+
+      <!-- AFTER -->
+      <article id="demo" class="pico-background-azure-400" style="display: var(--display-after);">
+        <hgroup class="pico-azure-400">
+          <h2 class="pico-color-azure-50">Tässäpä tosi cool laskuri!</h2>
+          <p  class="pico-color-azure-700">
+            <i>Any change, even a change for the better, is always accompanied by drawbacks and discomforts.</i>
+          </p>
+          <p  class="pico-color-azure-900">
+            Minä olen niin ylpeä sinusta.
+          </p>
+        </hgroup>
+      </article>
+      
+      <!-- TIMER -->
+      
+      <article id="demo" class="pico-background-azure-250">
+        <div id="t-div" style="text-align: center;" class="">
+          <div style="display: inline; white-space: nowrap"><span class="t-days"></span> <span class="txt-days"></span>,</div>
+          <div style="display: inline; white-space: nowrap"><span class="t-hours"></span> <span class="txt-hours"></span>,</div>
+          <div style="display: inline; white-space: nowrap"><span class="t-minutes"></span> <span class="txt-minutes"></span> ja</div>
+          <div style="display: inline; white-space: nowrap"><span class="t-seconds"></span> <span class="txt-seconds"></span></div>
+        </div>
+        <br>
+        <div id="t-plus-div" style="text-align: center; display: var(--display-plus);" class="">
+          Sehän on jo
+          <div style="display: inline; white-space: nowrap"><span class="t-plus-years"></span> <span class="txt-plus-years"></span></div>
+          <div style="display: inline; white-space: nowrap"><span class="t-plus-months"></span> <span class="txt-plus-months"></span></div>
+          <div style="display: inline; white-space: nowrap"><span class="t-plus-weeks"></span> <span class="txt-plus-weeks"></span></div>
+          <div style="display: inline; white-space: nowrap"><span class="t-plus-days"></span> <span class="txt-plus-days"></span></div>
+        </div>
+        
+        <hr style="display: var(--display-after);">
+      </article>
+
+      <!-- <progress /> -->
+    </main>
+    <div id="bg" style="width: 100vw; height: 100vh; position: absolute; top: 0px; left: 0px; z-index: -100;"></div>
+     <script src="script.js"></script> 
+    <script>
+      VANTA.WAVES({
+        el: "#bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+      });
+    </script>
+  </body>
+</html>
