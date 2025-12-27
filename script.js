@@ -105,7 +105,7 @@ let calc = function () {
         dur.weeks = dur.days / 7 | 0;
         dur.days  = dur.days - 7 * dur.weeks;
     }
-    console.log(dur);
+    // console.log(dur);
 
     let displayPlus = sign <= 0 ? dur.years || dur.months || dur.weeks || dur.days : false;
     
