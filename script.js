@@ -1,8 +1,8 @@
 //import intervalToDuration from 'date-fns/intervalToDuration';
 
 let target = Date.parse(
-    //"2026-01-01T06:00:00+02:00" // <-- kohde
-    "2025-12-17T17:53:00+02:00"
+    "2026-01-01T06:00:00+02:00" // <-- kohde
+    //"2025-12-17T17:53:00+02:00"
     //"2024-09-02T17:53:00+02:00"
 );
 
@@ -107,7 +107,7 @@ let calc = function () {
     }
     console.log(dur);
 
-    let displayPlus = dur.years || dur.months || dur.weeks || dur.days;
+    let displayPlus = sign <= 0 ? dur.years || dur.months || dur.weeks || dur.days : false;
     
     document.getElementById('t-plus-div').style.setProperty("--display-plus", displayPlus ? "block" : "none");
 
