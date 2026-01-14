@@ -6,6 +6,10 @@ let target = Date.parse(
     //"2024-09-02T17:53:00+02:00"
 );
 
+let eurosPerVelo = 7.1;
+let hoursPerVelo = 72;
+let eurosPerSecond = eurosPerVelo / (hoursPerVelo * 60 * 60);
+
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
   new Promise((resolve, reject) => {
@@ -36,8 +40,9 @@ var animate = false;
 let calc = function () {
     let now = new Date().getTime();
 
-    let sign = Math.sign(target - now);
-    let distance = Math.abs(target - now);
+    let timeDiff = target - now;
+    let sign = Math.sign(timeDiff);
+    let distance = Math.abs(timeDiff);
 
     // TODO Oh... rewrite this, pls
     var days1 = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -105,11 +110,10 @@ let calc = function () {
         dur.weeks = dur.days / 7 | 0;
         dur.days  = dur.days - 7 * dur.weeks;
     }
-    // console.log(dur);
 
     let displayPlus = sign <= 0 ? dur.years || dur.months || dur.weeks || dur.days : false;
     
-    document.getElementById('t-plus-div').style.setProperty("--display-plus", displayPlus ? "block" : "none");
+    body.style.setProperty("--display-plus", displayPlus ? "block" : "none");
 
     for (const el of document.getElementsByClassName("t-plus-years")) {
         if(dur.years)
@@ -130,6 +134,13 @@ let calc = function () {
         if(dur.days)
             el.textContent = `${dur.days} ${dur.days == 1 ? 'päivä' : 'päivää'}`;
         else el.textContent = ''
+    }
+
+    let secondsTotal2 = -timeDiff/1000;
+    let euros = eurosPerSecond * secondsTotal2;
+
+    for (const el of document.getElementsByClassName("t-euros-amount")) {
+        el.textContent = (Math.round(euros * 100) / 100).toFixed(2);
     }
 
 };
